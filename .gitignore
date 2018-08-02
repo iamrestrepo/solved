@@ -5,7 +5,7 @@
 .eslintcache
 
 # Packages
-node_modules
+/node_modules/
 bower_components
 
 # OS-generated files
