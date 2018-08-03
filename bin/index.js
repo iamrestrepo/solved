@@ -2,10 +2,19 @@
 
  'use strict' 
 
-const colors = require('colors');
-const answer = require("./lib/cliAnswerText");
-// const stdErr =  require("./lib/stderr")
+const { spawn } = require('child_process');
+const answer = require("../lib/solved.js");
+const child = spawn('pwd');
 
-console.log(answer.solution());
-// console.log('strErr', stdErr);
- 
+
+// child.stderr.on('data', (data) => {
+//     console.error(`child stderr:\n${data}`);
+// });
+
+// child.on('exit', (code, signal) =>  {
+//     console.log('child process exited with ' +
+//         `code ${code} and signal ${signal}`);
+// });
+
+
+console.log(answer.solved());
