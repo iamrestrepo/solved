@@ -1,20 +1,19 @@
 #!/usr/env node
 
- 'use strict' 
+'use strict'
 
 const { spawn } = require('child_process');
 const answer = require("../lib/solved.js");
-const child = spawn('pwd');
 
 
-// child.stderr.on('data', (data) => {
-//     console.error(`child stderr:\n${data}`);
-// });
-
-// child.on('exit', (code, signal) =>  {
-//     console.log('child process exited with ' +
-//         `code ${code} and signal ${signal}`);
-// });
+const processCall = spawn('node', ['bin/errorGenerator.js'], { cwd: './' });
 
 
-console.log(answer.solved());
+// markup of process' exit
+process.on('exit', (code, signal) => {
+    console.log('Process exited with ' +
+        `code ${code} and signal ${signal}`);
+});
+
+
+answer.errorCatcher(processCall);
