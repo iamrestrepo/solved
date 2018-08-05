@@ -1,11 +1,19 @@
 #!/usr/env node
 
- 'use strict' 
+'use strict'
 
-const colors = require('colors');
-const answer = require("./lib/cliAnswerText");
-// const stdErr =  require("./lib/stderr")
+const { spawn } = require('child_process');
+const answer = require("../lib/solved.js");
 
-console.log(answer.solution());
-// console.log('strErr', stdErr);
- 
+
+const processCall = spawn('node', ['bin/errorGenerator.js'], { cwd: './' });
+
+
+// markup of process' exit
+process.on('exit', (code, signal) => {
+    console.log('Process exited with ' +
+        `code ${code} and signal ${signal}`);
+});
+
+
+answer.errorCatcher(processCall);

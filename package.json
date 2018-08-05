@@ -2,17 +2,18 @@
   "name": "solved",
   "version": "1.0.0",
   "description": "Command line JS/ Node application to get StackOverflow's highest ranked answers to runtime errors in the terminal.",
-  "main": "./lib/solved.js",
-  "bin": {
-    "solved":".bin/index.js"
+  "main": "./lib/solved.js", 
+  "engines": {
+    "node": ">=4.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "solved": "bin/index.js"
+    "solved": "bin/index.js",
+    "start": " node bin/index.js 2> errorTxt.txt & node bin/index.js || true"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iamrestrepo/solveIt.git"
+    "url": "git+https://github.com/iamrestrepo/solved.git"
   },
   "keywords": [
     "CLI",
@@ -26,11 +27,14 @@
   "author": "iamrestrepo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iamrestrepo/solveIt/issues"
+    "url": "https://github.com/iamrestrepo/solved/issues"
   },
-  "homepage": "https://github.com/iamrestrepo/solveIt#readme",
+  "homepage": "https://github.com/iamrestrepo/solved#readme",
   "dependencies": {
     "colors": "^1.3.1",
     "lodash": "^4.17.10"
   }
 }
+
+
+  
