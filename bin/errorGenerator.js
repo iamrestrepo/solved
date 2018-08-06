@@ -1,9 +1,11 @@
 
 //Temp Error
 
-// const fakeError =  () => {
-    // fakeError();
-// }
+const fakeError =  () => { 
+    const arr = [1,2,3,4,5,5]
+    return arr.filter(number => number === 7})
+}
+   
 
 
 fakeError()
