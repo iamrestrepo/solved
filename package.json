@@ -33,7 +33,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "iconv-lite": "^0.6.2",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "request": "^2.88.2",
     "utf8": "^3.0.0",
     "zlib": "^1.0.5"
